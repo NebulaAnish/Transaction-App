@@ -1,0 +1,30 @@
+{% extends "base/main.html" %}
+
+{% block content %}
+
+<table style="border-spacing: 30px;">
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td> Title: </td>
+        <td> {{transaction.title }}</td>
+    </tr>
+    <tr>
+        <td> Amount: </td>
+        <td> {{transaction.amount }} </td>
+    </tr>
+    <tr>
+        <td> Type: </td>
+        <td> {{transaction.category}} </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td><a href="{% url 'listview' %}"><button> HomePage </button></a></td>
+        <td> <a href="{% url 'updateview' transaction.id %}"><button> &nbsp Update</button></a></td>
+        <td> <a href="{% url 'deleteview' transaction.id %}"> <button>&nbsp; Delete</button></a></td>
+    </tr>
+</table>
+{% endblock %}
