@@ -1,5 +1,6 @@
 # Transaction-App
-This is a project made to keep a track of your transactions
+This is a project made to keep a track of transactions for the purpose of learning django.
+Online Link: http://nebulaanish.pythonanywhere.com/
 
 ## Environment Setup:
   To use same version of tools as were used during development please setup your virtual environment with the settings in requirements.txt to make sure things don't break with a different version.
