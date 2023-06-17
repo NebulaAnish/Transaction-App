@@ -60,6 +60,17 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
     template_name = 'base/profileEdit.html'
     context_object_name = 'user'
 
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+
+        if obj.user != request.user:
+            return self.handle_permission_denied()
+        return super().dispatch(request, *args, **kwargs)
+
+    def handle_permission_denied(self):
+        redirect_url = reverse_lazy('forbidden')
+        return HttpResponseRedirect(redirect_url)
+
 
 class CustomListView(LoginRequiredMixin, ListView):
     model = Transaction
