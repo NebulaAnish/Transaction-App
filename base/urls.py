@@ -1,7 +1,10 @@
 from .views import CustomListView, CustomCreateView, CustomDetailView, CustomUpdateView
 from .views import CustomDeleteView, CustomLoginView, CustomLogoutView, CustomRegisterView
-from .views import ProfileEditView
+from .views import ProfileEditView, ForbiddenView
+from .views import profile
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     # path("register/", CustomRegisterView.as_view(), name="register"),
@@ -16,4 +19,5 @@ urlpatterns = [
          CustomDeleteView.as_view(), name='deleteview'),
     path('register/', CustomRegisterView.as_view(), name='register'),
     path('profileedit/<int:pk>/', ProfileEditView.as_view(), name='profileEdit'),
-]
+    path('fobidden/', ForbiddenView.as_view(), name='forbidden'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

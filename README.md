@@ -2,7 +2,8 @@
 This is a project made to keep a track of transactions for the purpose of learning django.
 
 Demo Link: http://nebulaanish.pythonanywhere.com/
-Test Account-> username: user / password: user
+
+Test Account=> username: user / password: user
 
 ## Environment Setup:
   To use same version of tools as were used during development please setup your virtual environment with the settings in requirements.txt to make sure things don't break with a different version.
@@ -14,4 +15,3 @@ Test Account-> username: user / password: user
   - navigate to the folder containing manage.py for that project
   - $ python manage.py runserver
   - navigate to localhost:8000
-  (some projects' entry app may be in different routes, see more in project description below)

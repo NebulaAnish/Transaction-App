@@ -13,6 +13,7 @@ class NewUserForm(UserCreationForm):
         max_length=30, required=False, help_text="Optional")
     email = forms.EmailField(
         max_length=254, help_text='Enter a valid email address')
+    avatar = forms.ImageField()
 
     class Meta:
         model = User
@@ -23,10 +24,13 @@ class NewUserForm(UserCreationForm):
             'email',
             'password1',
             'password2',
+            'avatar'
         ]
 
 
 class ProfileForm(forms.ModelForm):
+    avatar = forms.ImageField()
+    bio = forms.CharField(max_length=100)
 
     class Meta:
         model = User
@@ -35,4 +39,6 @@ class ProfileForm(forms.ModelForm):
             'first_name',
             'last_name',
             'email',
+            'avatar',
+            'bio'
         ]
