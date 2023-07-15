@@ -3,7 +3,7 @@ This is a project made to keep a track of transactions for the purpose of learni
 
 Demo Link: http://nebulaanish.pythonanywhere.com/
 
-Test Account=> username: user / password: user
+Test Account=> username: user / password: user12345
 
 ## Environment Setup:
   To use same version of tools as were used during development please setup your virtual environment with the settings in requirements.txt to make sure things don't break with a different version.
