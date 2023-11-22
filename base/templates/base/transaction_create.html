@@ -1,12 +1,21 @@
 {% extends "base/main.html" %}
+{% load tailwind_filters %}
 
 {% block content %}
 
+<div class="mx-auto text-center rounded-lg my-auto w-1/5 bg-white p-10 mt-12">
+    <h1 class="text-2xl text-blue-500 mb-5 font-bold">Add New Transaction</h1>
+    <form class="text-left" method='post' action="">
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="text-center">
+            <input class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600   focus:outline-none focus:shadow-outline-blue active:bg-blue-800 mt-4" type="submit" value="Submit">
+        <a href="{% url 'listview' %}" class="ml-4 bg-blue-500 px-4 py-2 rounded-md text-white hover:bg-blue-600">
+Home
+        </a>
+        </div>
 
-<form method='post' action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="submit">
-</form>
+    </form>
+</div>
 
 {% endblock %}

@@ -1,14 +1,70 @@
 {% extends 'base/main.html' %}
 
-{% block content %}
-<h4> Login </h4>
+{% load tailwind_filters %}
 
+
+
+{% block content %}
+
+
+<section class="flex flex-col md:flex-row h-screen items-center">
+
+    <div class="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+      <img src="https://images.unsplash.com/photo-1534951009808-766178b47a4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="w-full h-full object-cover">
+    </div>
+  
+    <div class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+          flex items-center justify-center bg-gray-100">
+          
+          <div class="w-full h-100 text-center">
+          <h1 class="m-auto text-5xl text-blue-500 bold font-bold">Money Tracker</h1>
+  
+  
+       <div class="text-left">
+        <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12 mb-5">Log in to your account</h1>
+  
+        <!-- Form -->
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input class="inline-block rounded border border-blue-500 bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-blue-500 focus:outline-none focus:ring active:text-blue-500" type="submit" value="Login">
+        </form>
+  
+        <hr class="my-6 border-gray-300 w-full">
+  
+        <button type="button" class="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300">
+              <div class="flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-6 h-6" viewBox="0 0 48 48"><defs><path id="a" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z"/><path clip-path="url(#b)" fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z"/><path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z"/><path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z"/></svg>
+              <span class="ml-4">
+              Log in
+              with
+              Google</span>
+              </div>
+            </button>
+  
+       </div>
+        <p class="mt-8">Need an account? <a href="{% url 'register'%}" class="text-blue-500 hover:text-blue-700 font-semibold">Create an
+                account</a></p>
+  
+            <div class="mt-4 shadow-md bg-gray-100 p-4 rounded-lg"> 
+                <h2 class="text-2xl" >Test Account</h2>
+                <p class="p-2"> Username: user</p>
+                <p class="p-2">Password: user</p>
+            </div>
+      </div>
+    </div>
+  
+  </section>
+
+
+
+<!-- 
 <form action="" method="post">
     {% csrf_token %}
-    {{form.as_p}}
+    {{form|crispy}}
     <input type="submit" value="Login">
 </form>
 <p>Don't Have an account? <a href="{% url 'register' %}">Register</a></p>
-<p>Test Accounts => Username: user Password: user</p>
+<p>Test Accounts => Username: user Password: user</p> -->
 
 {% endblock %}

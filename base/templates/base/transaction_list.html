@@ -9,6 +9,75 @@
 <a href="{% url 'login' %}">Login</a>
 {% endif %}
 
+
+<!-- component -->
+<div class="flex flex-col w-3/5 mx-auto mt-12">
+    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table class="min-w-full">
+            <thead class="bg-gray-200 border-b">
+              <tr>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  Number
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  Title
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  Amount
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                  Type
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+        {% for transaction in transactions %}
+              <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    <a href="{% url 'detailview' transaction.id%}"> {{ transaction.title }} </a>
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    {{ transaction.amount }}
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                    {{ transaction.category}}
+                </td>
+              </tr>
+         {% endfor %}     
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+        
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table style="border-spacing: 30px;">
     <tr>
         <th>Title</th>
@@ -31,3 +100,6 @@
     <button>Create New</button></a>
 <p><a href="{% url 'profileEdit' user.id %}">Edit User Details </a></p>
 {% endblock %}
+
+
+
