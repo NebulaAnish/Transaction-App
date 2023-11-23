@@ -1,4 +1,6 @@
 
+{% load static %}
+
 <script src="https://cdn.tailwindcss.com"></script>
 
 <nav class="bg-blue-500 p-4 flex justify-between items-center">
@@ -19,7 +21,14 @@
     <!-- Login Button on the Top Right -->
 
     {% if request.user.is_authenticated %}
-        <p class="text-white"><a href="{% url 'profileEdit' request.user.id %}">{{request.user.username|title}}</a></p>
+    <a href="{% url 'profileEdit' request.user.id %}">
+        <div class="flex text-center align-center text-white">
+            <img class="h-10" src="{% static 'default.png'%}" alt="">
+            <p class="my-auto ml-2">
+                {{request.user.username|title}}
+            </p>  
+        </div>
+    </a>
         <a href="{% url 'logout'%}">
             <button class="bg-white text-blue-500 px-4 py-2 rounded-full hover:bg-gray-100">Logout</button>
         </a>
