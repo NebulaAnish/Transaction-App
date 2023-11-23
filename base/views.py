@@ -61,9 +61,9 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
     context_object_name = 'user'
 
     def dispatch(self, request, *args, **kwargs):
-        obj = self.get_object()
+        self.object = self.get_object()
 
-        if obj.user != request.user:
+        if self.object != request.user:
             return self.handle_permission_denied()
         return super().dispatch(request, *args, **kwargs)
 
@@ -78,8 +78,9 @@ class CustomListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['transactions'] = context['transactions'].filter(
-            user=self.request.user)
+        context['transactions'] = context['transactions'].filter(user=self.request.user)
+        
+
         context['count'] = context['transactions'].count()
         return context
 

@@ -1,0 +1,30 @@
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<nav class="bg-blue-500 p-4 flex justify-between items-center">
+ 
+   <!-- Logo Text on the Left -->
+<a href="{% url 'listview' %}">
+    <div class="text-white text-xl font-bold">Money Tracker</div>
+
+</a>
+    <!-- Navigation Links -->   
+    <div class="space-x-4">
+        <a href="#" class="text-white">Home</a>
+        <a href="#" class="text-white">About</a>
+        <a href="#" class="text-white">Services</a>
+        <a href="#" class="text-white">Contact</a>
+    </div>
+
+    <!-- Login Button on the Top Right -->
+
+    {% if request.user.is_authenticated %}
+        <p class="text-white"><a href="{% url 'profileEdit' request.user.id %}">{{request.user.username|title}}</a></p>
+        <a href="{% url 'logout'%}">
+            <button class="bg-white text-blue-500 px-4 py-2 rounded-full hover:bg-gray-100">Logout</button>
+        </a>
+        
+    {% else %}
+        <a href="{% url 'login' %}"><button class="bg-white text-blue-500 px-4 py-2 rounded-full hover:bg-gray-100">Login</button></a>
+    {% endif %}
+</nav>
