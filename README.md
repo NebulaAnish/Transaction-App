@@ -4,6 +4,13 @@ This is a project made to keep a track of transactions for the purpose of learni
 Demo Link: http://nebulaanish.pythonanywhere.com/
 
 Test Account=> username: user / password: user12345
+<img src="./screenshots/1.png" alt="Alt text">
+<img src="./screenshots/2.png" alt="Alt text">
+<img src="./screenshots/3.png" alt="Alt text">
+<img src="./screenshots/4.png" alt="Alt text">
+<img src="./screenshots/5.png" alt="Alt text">
+<img src="./screenshots/6.png" alt="Alt text">
+<img src="./screenshots/7.png" alt="Alt text">
 
 
 
